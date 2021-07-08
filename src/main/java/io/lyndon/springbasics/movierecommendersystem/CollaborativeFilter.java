@@ -1,5 +1,8 @@
 package io.lyndon.springbasics.movierecommendersystem;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class CollaborativeFilter implements Filter {
 
   public String[] getRecommendations(String movie) {
