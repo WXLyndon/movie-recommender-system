@@ -1,4 +1,4 @@
-package io.lyndon.springbasics.movierecommendersystem;
+package io.lyndon.springbasics.movierecommendersystem.lesson1to7;
 
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;

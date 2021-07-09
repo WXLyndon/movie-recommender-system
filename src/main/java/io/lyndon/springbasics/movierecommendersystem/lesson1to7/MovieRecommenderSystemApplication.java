@@ -1,4 +1,4 @@
-package io.lyndon.springbasics.movierecommendersystem;
+package io.lyndon.springbasics.movierecommendersystem.lesson1to7;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
