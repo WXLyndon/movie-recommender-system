@@ -7,16 +7,16 @@ import org.springframework.stereotype.Component;
 public class RecommenderImplementation {
   // use filter interface to select filter
   @Autowired
-  private Filter filter;
+  private Filter contentBasedFilter;
 
-  public RecommenderImplementation(Filter filter) {
-    this.filter = filter;
-  }
+//  public RecommenderImplementation(Filter filter) {
+//    this.filter = filter;
+//  }
 
   public String[] recommendMovies(String movie) {
 
     // print the name of interface implementation being used
-    System.out.println("Name of the filter in use: " + filter + "\n");
-    return filter.getRecommendations("Finding Dory");
+    System.out.println("Name of the filter in use: " + contentBasedFilter + "\n");
+    return contentBasedFilter.getRecommendations("Finding Dory");
   }
 }
