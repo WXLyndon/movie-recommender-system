@@ -1,9 +1,12 @@
 package io.lyndon.springbasics.movierecommendersystem.lesson8;
 
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 @Qualifier("CF")
 public class CollaborativeFilter implements Filter {
 

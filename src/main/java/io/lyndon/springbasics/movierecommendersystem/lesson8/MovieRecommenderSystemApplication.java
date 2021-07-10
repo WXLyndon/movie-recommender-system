@@ -4,8 +4,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
-import java.util.Arrays;
-
 @SpringBootApplication
 public class MovieRecommenderSystemApplication {
 
@@ -15,11 +13,14 @@ public class MovieRecommenderSystemApplication {
     ApplicationContext appContext =
         SpringApplication.run(MovieRecommenderSystemApplication.class, args);
 
-    // RecommenderImplementation injects dependency using constructor
-    System.out.println("\n*************************************************");
-    System.out.println("Calling getBean() on RecommenderImplementation");
-    RecommenderImplementation recommender = appContext.getBean(RecommenderImplementation.class);
-    String[] result = recommender.recommendMovies("Finding Dory");
-    System.out.println(Arrays.toString(result));
+    // Retrieve singleton bean from application context thrice
+    ContentBasedFilter cbf1 = appContext.getBean(ContentBasedFilter.class);
+    ContentBasedFilter cbf2 = appContext.getBean(ContentBasedFilter.class);
+    ContentBasedFilter cbf3 = appContext.getBean(ContentBasedFilter.class);
+
+    // Retrieve prototype bean from application context thrice
+    CollaborativeFilter cf1 = appContext.getBean(CollaborativeFilter.class);
+    CollaborativeFilter cf2 = appContext.getBean(CollaborativeFilter.class);
+    CollaborativeFilter cf3 = appContext.getBean(CollaborativeFilter.class);
   }
 }
