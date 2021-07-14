@@ -8,14 +8,18 @@ import org.springframework.context.ApplicationContext;
 public class MovieRecommenderSystemApplication {
 
   public static void main(String[] args) {
-
-    // ApplicationContext manages the beans and dependencies
     ApplicationContext appContext =
         SpringApplication.run(MovieRecommenderSystemApplication.class, args);
 
-    // use ApplicationContext to get recommender object
+    // Retrieving singleton bean from application context
     RecommenderImplementation recommender = appContext.getBean(RecommenderImplementation.class);
-
     System.out.println(recommender);
+
+    // Retrieving prototype bean from application context twice
+    Movie m1 = appContext.getBean(Movie.class);
+    System.out.println(m1);
+
+    Movie m2 = appContext.getBean(Movie.class);
+    System.out.println(m2);
   }
 }
