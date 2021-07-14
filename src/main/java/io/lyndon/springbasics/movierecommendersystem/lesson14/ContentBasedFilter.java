@@ -1,11 +1,5 @@
-package io.lyndon.springbasics.movierecommendersystem.lesson12;
+package io.lyndon.springbasics.movierecommendersystem.lesson14;
 
-import org.springframework.beans.factory.annotation.Qualifier;
-
-import javax.inject.Named;
-
-@Named
-@Qualifier("CF")
 public class ContentBasedFilter implements Filter {
   public String[] getRecommendations(String movie) {
     // logic of content based filter

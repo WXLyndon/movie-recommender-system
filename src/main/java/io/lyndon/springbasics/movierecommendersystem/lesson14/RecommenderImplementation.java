@@ -1,16 +1,10 @@
-package io.lyndon.springbasics.movierecommendersystem.lesson8;
+package io.lyndon.springbasics.movierecommendersystem.lesson14;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
-
-@Component
 public class RecommenderImplementation {
 
   private final Filter filter;
 
-  @Autowired
-  public RecommenderImplementation(@Qualifier("CF") Filter filter) {
+  public RecommenderImplementation(Filter filter) {
     this.filter = filter;
     System.out.println("Constructor invoked...");
   }
